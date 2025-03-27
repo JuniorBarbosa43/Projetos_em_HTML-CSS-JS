@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">RPG</a></li>
+                <li><a href="sbv.html">sobrevivência</a></li>
+                <li><a href="aa.html">ação-aventura</a></li>
+                <li><a href="mtp.html">Multiplayer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="selection-container-wrapper">
+        <div class="options">
+            <button class="option-btn" data-target="content-1"><span>R6</span></button>
+            <button class="option-btn" data-target="content-2">Salve o Mundo</button>
+            <button class="option-btn" data-target="content-3">Detroid</button>
+            <button class="option-btn" data-target="content-4">Warzone</button>
+        </div>
+        <div class="content" id="content-1">
+            <img src="img/mtp/r6.webp" alt="Imagem 1">
+            <p>Tom Clancy's Rainbow Six Siege é um videojogo do género first person shooter produzido pela Ubisoft Montreal. Foi anunciado pela Ubisoft a 9 de Junho de 2014 na Electronic Entertainment Expo 2014 onde foi muito aplaudido pela crítica. Foi lançado para Xbox One, PlayStation 4 e para Microsoft Windows.</p>
+        </div>
+        <div class="content" id="content-2">
+            <img src="img/mtp/fortnite-save-the-world.jpg" alt="Imagem 2">
+            <p>Fortnite: Save the World é um modo premium de jogabilidade cooperativa do jogo eletrônico multijogador Fortnite, criado pela Epic Games, onde luta contra hordas de zumbis e defende objetos com fortificações, com até 3 jogadores, e por fim derrotar o Rei da Tempestade.</p>
+        </div>
+        <div class="content" id="content-3">
+            <img src="img/mtp/dbd.jpeg" alt="Imagem 3">
+            <p>Dead by Daylight é um jogo eletrônico multijogador online assimétrico do gênero survival horror desenvolvido pelo estúdio canadense Behaviour Interactive.</p>
+        </div>
+        <div class="content" id="content-4">
+            <img src="img/mtp/Cod W.webp" alt="Imagem 4">
+            <p>Call of Duty: Warzone é um jogo eletrônico free-to-play do gênero battle royale desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision. Lançado em 10 de março de 2020 para Microsoft Windows, PlayStation 4 e Xbox One, o jogo faz parte do título Call of Duty: Modern Warfare, mas não requer compra.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('.option-btn');
+            const contents = document.querySelectorAll('.content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target');
+                    contents.forEach(content => {
+                        if (content.getAttribute('id') === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

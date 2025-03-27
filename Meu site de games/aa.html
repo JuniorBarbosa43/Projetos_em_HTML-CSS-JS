@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">RPG</a></li>
+                <li><a href="sbv.html">sobrevivência</a></li>
+                <li><a href="aa.html">ação-aventura</a></li>
+                <li><a href="mtp.html">Multiplayer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="selection-container-wrapper">
+        <div class="options">
+            <button class="option-btn" data-target="content-1"><span>Farcry 3</span></button>
+            <button class="option-btn" data-target="content-2">Cuphead</button>
+            <button class="option-btn" data-target="content-3">Detroid</button>
+            <button class="option-btn" data-target="content-4">Toy Story</button>
+        </div>
+        <div class="content" id="content-1">
+            <img src="img/aa/farcry3.jpeg" alt="Imagem 1">
+            <p>Far Cry 3 é um jogo eletrônico de tiro em primeira pessoa e mundo aberto de 2012 desenvolvido pela Ubisoft Montreal e publicado pela Ubisoft para PlayStation 3, Xbox 360 e Microsoft Windows. É a sequência do jogo Far Cry 2, lançado em 2008.</p>
+        </div>
+        <div class="content" id="content-2">
+            <img src="img/aa/cuphead.avif" alt="Imagem 2">
+            <p>Cuphead é um jogo eletrônico de run and gun e plataforma criado pelos irmãos canadenses Chad e Jared Moldenhauer através da Studio MDHR. O jogo foi inspirado no estilo de animação Rubber hose usado em desenhos animados da Era de Ouro da animação americana, como o trabalho dos estúdios Fleischer Studios, Warner Bros.</p>
+        </div>
+        <div class="content" id="content-3">
+            <img src="img/aa/detroid.jpg" alt="Imagem 3">
+            <p>Detroit: Become Human é um jogo eletrônico produzido pela Quantic Dream e publicado pela Sony Interactive Entertainment para o PlayStation 4 e Microsoft Windows PC.</p>
+        </div>
+        <div class="content" id="content-4">
+            <img src="img/aa/toystory.jpg" alt="Imagem 4">
+            <p>Toy Story 3: The Game é um jogo baseado no filme Toy Story 3. É publicado pela Disney Interactive Studios e desenvolvido por Avalanche Software. O jogo foi lançado na América do Norte em 15 de junho de 2010.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('.option-btn');
+            const contents = document.querySelectorAll('.content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target');
+                    contents.forEach(content => {
+                        if (content.getAttribute('id') === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

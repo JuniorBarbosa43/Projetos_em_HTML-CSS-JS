@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Administração</h1>
+        <h2>Agendamentos Recentes</h2>
+        <ul id="appointments-list">
+        </ul>
+        <h2>Editar Agendamento</h2>
+        <form id="edit-form">
+            <input type="hidden" id="appointment-id">
+            <input type="text" id="appointment-name" placeholder="Nome" required>
+            <input type="text" id="appointment-service" placeholder="Serviço" required>
+            <input type="datetime-local" id="appointment-date" required>
+            <button type="submit">Salvar Alterações</button>
+        </form>
+        <p id="edit-message"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

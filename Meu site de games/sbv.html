@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">RPG</a></li>
+                <li><a href="sbv.html">sobrevivência</a></li>
+                <li><a href="aa.html">ação-aventura</a></li>
+                <li><a href="mtp.html">Multiplayer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="selection-container-wrapper">
+        <div class="options">
+            <button class="option-btn" data-target="content-1"><span>Don't Starve</span></button>
+            <button class="option-btn" data-target="content-2">Project Zomboid</button>
+            <button class="option-btn" data-target="content-3">TLOU</button>
+            <button class="option-btn" data-target="content-4">Terraria</button>
+        </div>
+        <div class="content" id="content-1">
+            <img src="img/sbv/Don't Starve Together.avif" alt="Imagem 1">
+            <p>Don't Starve Together é a expansão multijogador independente do difícil jogo de sobrevivência na natureza selvagem, Don't Starve. Entre num mundo estranho e inexplorado cheio de criaturas estranhas, perigos e surpresas. Reúna recursos para fabricar itens e estruturas que correspondam ao seu estilo de sobrevivência.</p>
+        </div>
+        <div class="content" id="content-2">
+            <img src="img/sbv/Project Zomboid.jpg" alt="Imagem 2">
+            <p>Project Zomboid é um jogo eletrônico de terror de sobrevivência isométrico de mundo aberto em desenvolvimento pela desenvolvedora independente britânica e canadense The Indie Stone.</p>
+        </div>
+        <div class="content" id="content-3">
+            <img src="img/sbv/tlou.avif" alt="Imagem 3">
+            <p>The Last of Us é uma franquia de jogos eletrônicos de ação-aventura e survival horror exclusiva da PlayStation, criada por Neil Druckmann. A franquia é situada em um mundo pós-apocalíptico, com seres humanos hostis e criaturas canibais infectadas por uma mutação do fungo cordyceps. </p>
+        </div>
+        <div class="content" id="content-4">
+            <img src="img/sbv/terraria.jpg" alt="Imagem 4">
+            <p>Terraria é um jogo eletrônico RPG de ação-aventura independente produzido pela desenvolvedora de jogos Re-Logic. Possui como características a exploração, artesanato, construção de estruturas e combate a monstros perigosos em um mundo 2D gerado proceduralmente.</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('.option-btn');
+            const contents = document.querySelectorAll('.content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target');
+                    contents.forEach(content => {
+                        if (content.getAttribute('id') === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

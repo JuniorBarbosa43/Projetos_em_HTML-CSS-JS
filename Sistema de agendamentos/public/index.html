@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamentos</h1>
+
+        <div id="recent-appointments">
+            <h2>Agendamentos Recentes</h2>
+            <ul id="appointments-list">
+            </ul>
+        </div>
+
+        <div id="appointment-form">
+            <h2>Agendar Serviço</h2>
+            <form id="appointment-form">
+                <input type="text" id="name" placeholder="Seu nome" required>
+                <input type="text" id="service" placeholder="Serviço desejado" required>
+                <input type="datetime-local" id="date" required>
+                <button type="submit">Enviar</button>
+            </form>
+            <p id="form-message"></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

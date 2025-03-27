@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Logo</a>
+            <ul class="nav-links">
+                <li><a href="index.html">RPG</a></li>
+                <li><a href="sbv.html">sobrevivência</a></li>
+                <li><a href="aa.html">ação-aventura</a></li>
+                <li><a href="mtp.html">Multiplayer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="selection-container-wrapper">
+        <div class="options">
+            <button class="option-btn" data-target="content-1"><span>Stardew Valley</span></button>
+            <button class="option-btn" data-target="content-2">Skyrin</button>
+            <button class="option-btn" data-target="content-3">Diablo IV</button>
+            <button class="option-btn" data-target="content-4">The Witcher 3</button>
+        </div>
+        <div class="content" id="content-1">
+            <img src="img/RPG/stardew.avif" alt="Imagem 1">
+            <p>Stardew Valley é um videogame RPG de simulação desenvolvido por Eric "ConcernedApe" Barone. Os jogadores assumem o papel de um personagem que herda a fazenda dilapidada de seu falecido avô em um lugar conhecido como Stardew Valley. </p>
+        </div>
+        <div class="content" id="content-2">
+            <img src="img/RPG/skyrin.avif" alt="Imagem 2">
+            <p>Skyrim irrompeu em uma guerra civil depois que um de seus reis foi assassinado. Paralelamente, o deus Alduin (“Devorador de Mundos”, também conhecido em outras partes do Império como o mais importante dos Nove, Akatosh), que assume a forma de um enorme dragão, surgiu para destruir todo o mundo.</p>
+        </div>
+        <div class="content" id="content-3">
+            <img src="img/RPG/diabloiv.jpg" alt="Imagem 3">
+            <p>Diablo IV é um RPG de ação desenvolvido pela empresa Blizzard Entertainment, sendo o quarto título da série Diablo. Em 1.º de novembro de 2019, durante a Blizzcon, o jogo foi oficialmente anunciado para PC e plataformas. Seu lançamento foi bem recebido pela crítica e pelo público.</p>
+        </div>
+        <div class="content" id="content-4">
+            <img src="img/RPG/thewitcher3.avif" alt="Imagem 4">
+            <p>The Witcher 3: Wild Hunt (em polonês: Wiedźmin 3: Dziki Gon) é um jogo eletrônico de RPG de ação em mundo aberto desenvolvido pela CD Projekt RED e lançado no dia 19 de maio de 2015 para as plataformas Microsoft Windows, PlayStation 4, Xbox One e em outubro de 2019 para o Nintendo Switch, sendo o terceiro título da ...</p>
+        </div>
+    </div>
+    
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('.option-btn');
+            const contents = document.querySelectorAll('.content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const target = button.getAttribute('data-target');
+                    contents.forEach(content => {
+                        if (content.getAttribute('id') === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
